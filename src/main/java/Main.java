@@ -31,10 +31,87 @@ Lincoln Nguyen
 Reiber P5
 */
 
-
+/*
 public class Main {
   public static void main(String[] args) {
     new Player();
     System.out.println("TTT - RAN WITHOUT ERRORS");
   }
 }
+*/
+
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.Random;
+class Main {
+
+  public static final int[][] ReSTATE = {
+      { 2, 0, 2 },
+      { 1, 1, 0 },
+      { 0, 1, 2 }
+  };
+
+  public static final int[][] DSTATE = {
+    {2,0,9,7},
+    {1,1,2,5},
+    {0,1,2,5},
+    {1,3,6,1}
+  };
+
+  public static void main(String[] args) {
+    Random turnchoice = new Random();
+    Scanner input = new Scanner(System.in);
+    int winner = 0;
+
+    int[][] State = ReSTATE;
+    int current = turnchoice.nextInt(2) + 1;
+    PlayerX = new Player();
+    PlayerO = new Player();
+    //FYI: 1 = X's turn, 2 = O's turn.
+
+    System.out.println(current);
+
+    Getstate(State);
+for(int i = 0; i <= DSTATE.length - 1; i++){
+  System.out.print(DSTATE[i][(DSTATE.length - 1) - i]);
+}
+
+
+    System.out.print(" -=-=-=-=- FINISHED  -=-=-=-=-");
+  }
+
+public static int Check(int winner){ //Temporary void 
+  //Long way: every single way win
+  //short way: scan to see if numbers are in a certain pattern.
+  //Eitherway: This should fire the start of every loop of the game running program.
+  return winner;
+}
+
+//Prints the state of the board
+  public static void Getstate(int[][] State) {
+    int k = 1;
+    System.out.println("--1---2---3--");
+    for (int[] i : State) {
+      System.out.print(k);
+      for (int j : i) {
+        if(j == 1){
+          System.out.print(" X ");
+        }
+        else if(j == 2){
+          System.out.print(" O ");
+        }
+        else{
+          System.out.print(" _ ");
+        }
+        System.out.print("|");
+      }
+      System.out.println();
+      System.out.println("-------------");
+      k = k + 1;
+    }
+  }
+
+  public static void Addtoken(int current){
+
+  }
+  }
