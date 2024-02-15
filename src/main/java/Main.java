@@ -65,8 +65,8 @@ class Main {
 
     int[][] State = ReSTATE;
     int current = turnchoice.nextInt(2) + 1;
-    PlayerX = new Player();
-    PlayerO = new Player();
+    Player PlayerX = new Player();
+    Player PlayerO = new Player();
     //FYI: 1 = X's turn, 2 = O's turn.
 
     System.out.println(current);
