@@ -1,4 +1,11 @@
 /*
+
+Lincoln Nguyen
+Tic Tac Toe (Give me an X, give me an O) - 06
+1053757 @apps.nsd.org
+Reiber P5
+2/16/24
+--------------------------------------------------------------------------------
 This project must play Tic-Tac-Toe.
 
 
@@ -26,9 +33,7 @@ For more in the future and more awesomer...
 4) You can make a new class for a game session as well as a single game
 5) You can make a new class for a turn, or a piece, or a screen painter
 
-Lincoln Nguyen
-1053757 @apps.nsd.org
-Reiber P5
+
 */
 
 /*
@@ -45,8 +50,9 @@ import java.util.Scanner;
 import java.util.Random;
 class Main {
 
+  //template state, reset to all tiles being 0 upon complete
   public static final int[][] ReSTATE = {
-      { 2, 0, 2 },
+      { 2, 1, 2 },
       { 1, 1, 0 },
       { 0, 1, 2 }
   };
@@ -67,50 +73,29 @@ class Main {
     int current = turnchoice.nextInt(2) + 1;
     Player PlayerX = new Player();
     Player PlayerO = new Player();
+    Game ttt = new Game(ReSTATE, winner);
     //FYI: 1 = X's turn, 2 = O's turn.
 
     System.out.println(current);
-
-    Getstate(State);
+    ttt.Getstate(ReSTATE);
+    
+    //code remnant for winscanning. This is for scanning top right bottom left diagonal
+    /*
 for(int i = 0; i <= DSTATE.length - 1; i++){
   System.out.print(DSTATE[i][(DSTATE.length - 1) - i]);
 }
-
-
+    */
+    //main loop
+    while(winner == 0){
+      
+    }
     System.out.print(" -=-=-=-=- FINISHED  -=-=-=-=-");
   }
 
-public static int Check(int winner){ //Temporary void 
-  //Long way: every single way win
-  //short way: scan to see if numbers are in a certain pattern.
-  //Eitherway: This should fire the start of every loop of the game running program.
-  return winner;
-}
 
-//Prints the state of the board
-  public static void Getstate(int[][] State) {
-    int k = 1;
-    System.out.println("--1---2---3--");
-    for (int[] i : State) {
-      System.out.print(k);
-      for (int j : i) {
-        if(j == 1){
-          System.out.print(" X ");
-        }
-        else if(j == 2){
-          System.out.print(" O ");
-        }
-        else{
-          System.out.print(" _ ");
-        }
-        System.out.print("|");
-      }
-      System.out.println();
-      System.out.println("-------------");
-      k = k + 1;
-    }
-  }
 
+
+  //move this to player class.
   public static void Addtoken(int current){
 
   }
